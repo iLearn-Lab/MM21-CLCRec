@@ -2,11 +2,17 @@
 
 > A new framework that reformulates cold-start item representation learning from an information-theoretic standpoint, maximizing mutual dependencies between item content and collaborative signals via contrastive learning.
 
+---
 ## Authors
 
-**Yinwei Wei**\*, **Xiang Wang**, **Qi Li**, **Liqiang Nie**, **Yan Li**, **Xuanping Li**, **Tat-Seng Chua**
+**Yinwei Wei**<sup>1</sup>, **Xiang Wang**<sup>2</sup>, **Qi Li**<sup>1</sup>, **Liqiang Nie**<sup>1</sup>\*, **Yan Li**<sup>3</sup>, **Xuanping Li**<sup>3</sup>, **Tat-Seng Chua**<sup>2</sup>
 
-\* Corresponding author (weiyinwei at hotmail.com)
+<sup>1</sup> Shandong University, China  
+<sup>2</sup> National University of Singapore, Singapore  
+<sup>3</sup> Lenovo, China  
+\* Corresponding author
+
+---
 
 ## Links
 
