@@ -1,34 +1,71 @@
-# Contrastive Learning for Cold-start Recommendation
+# Contrastive Learning for Cold-Start Recommendation
 
-This is our Pytorch implementation for the paper:  
-> Yinwei Wei, Xiang Wang, Qi Li, Liqiang Nie, Yan Li, Xuanping Li, and Tat-Seng Chua (2021). Contrastive Learning for Cold-start Recommendation, Paper in ACM DL or [Paper in arXiv](https://arxiv.org/abs/2107.05315). In ACM MM`21, Chengdu, China, Oct. 20-24, 2021  
-Author: Dr. Yinwei Wei (weiyinwei at hotmail.com)
+> A new framework that reformulates cold-start item representation learning from an information-theoretic standpoint, maximizing mutual dependencies between item content and collaborative signals via contrastive learning.
+
+## Authors
+
+**Yinwei Wei**\*, **Xiang Wang**, **Qi Li**, **Liqiang Nie**, **Yan Li**, **Xuanping Li**, **Tat-Seng Chua**
+
+\* Corresponding author (weiyinwei at hotmail.com)
+
+## Links
+
+- **Paper**: [`ACM MM'21`](https://dl.acm.org/doi/epdf/10.1145/3474085.3475665)
+- **Code Repository**: [`GitHub`](https://github.com/weiyinwei/CLCRec)
+
+---
+
+## Table of Contents
+
+- [Updates](#updates)
+- [Introduction](#introduction)
+- [Highlights](#highlights)
+- [Method / Framework](#method--framework)
+- [Installation](#installation)
+- [Dataset](#dataset)
+- [Usage](#usage)
+- [Citation](#citation)
+
+---
+
+## Updates
+
+- [10/2021] Paper presented at ACM MM 2021.
+- [07/2021] Paper released on arXiv.
+
+---
 
 ## Introduction
-In this work, we reformulate the cold-start item representation learning from an information-theoretic standpoint. It aims to maximize the mutual dependencies between item content and collaborative signals. Specifically, the representation learning is theoretically lower-bounded by the integration of two terms: mutual information between collaborative embeddings of users and items, and mutual information between collaborative embeddings and feature representations of items. To model such a learning process, we devise a new objective function founded upon contrastive learning and develop a new Contrastive Learning-based Cold-start Recommendation framework (CLCRec).
 
-## Citation
-If you want to use our codes and datasets in your research, please cite:
+This is the official PyTorch implementation for the ACM MM 2021 paper **Contrastive Learning for Cold-Start Recommendation**.
 
-``` 
-@inproceedings{CLCRec,
-  title     = {Contrastive Learning for Cold-start Recommendation},
-  author    = {Wei, Yinwei and 
-               Wang, Xiang and 
-               Qi, Li and
-               Nie, Liqiang and 
-               Li, Yan and 
-               Li, Xuanqing and 
-               Chua, Tat-Seng},
-  booktitle = {Proceedings of the 29th ACM International Conference on Multimedia},
-  pages     = {--},
-  year      = {2021}
-}
-``` 
+Recommending cold-start items is a long-standing and fundamental challenge in recommender systems. In this work, we reformulate the cold-start item representation learning from an information-theoretic standpoint. It aims to maximize the mutual dependencies between item content and collaborative signals. Specifically, the representation learning is theoretically lower-bounded by the integration of two terms: mutual information between collaborative embeddings of users and items, and mutual information between collaborative embeddings and feature representations of items. 
 
+To model such a learning process, we devise a new objective function founded upon contrastive learning and develop a new **Contrastive Learning-based Cold-start Recommendation framework (CLCRec)**.
 
-## Environment Requirement
-The code has been tested running under Python 3.5.2. The required packages are as follows:
+---
+
+## Highlights
+
+- **Information-Theoretic Standpoint**: Reformulates cold-start item representation learning by maximizing mutual dependencies between item content and collaborative signals.
+- **Contrastive Learning Framework**: Proposes **CLCRec**, which consists of three core components: contrastive pair organization, contrastive embedding, and contrastive optimization modules.
+- **Robust Representation**: Effectively preserves collaborative signals in the content representations for both warm and cold-start items.
+- **Superior Performance**: Achieves significant improvements over state-of-the-art approaches in both warm- and cold-start scenarios.
+
+---
+
+## Method / Framework
+
+![Framework](framework.png)
+
+**Figure 1.** Overall framework of the proposed CLCRec model.
+
+---
+
+## Installation
+
+The code has been tested running under **Python 3.5.2**. The required packages are as follows:
+
 - Pytorch == 1.1.0
 - torch-cluster == 1.4.2
 - torch-geometric == 1.2.1
@@ -36,7 +73,15 @@ The code has been tested running under Python 3.5.2. The required packages are a
 - torch-sparse == 0.4.0
 - numpy == 1.16.0
 
-## Example to Run the Codes
+You can install the dependencies via pip:
+
+```
+pip install torch==1.1.0
+pip install torch-scatter==1.2.0 torch-sparse==0.4.0 torch-cluster==1.4.2 torch-geometric==1.2.1
+pip install numpy==1.16.0
+```
+
+## Usage
 The instruction of commands has been clearly stated in the codes.
 
 - Movielens dataset  
@@ -62,3 +107,23 @@ Some important arguments:
 ## Dataset
 We provide two processed datasets: Movielens and Amazon. (The details could be found in our article)
 For Kwai and Tiktok datasets, due to the copyright, please connect the owners of datasets.
+
+
+## Citation
+If you want to use our codes and datasets in your research, please cite:
+
+``` 
+@inproceedings{CLCRec,
+  title     = {Contrastive Learning for Cold-start Recommendation},
+  author    = {Wei, Yinwei and 
+               Wang, Xiang and 
+               Qi, Li and
+               Nie, Liqiang and 
+               Li, Yan and 
+               Li, Xuanqing and 
+               Chua, Tat-Seng},
+  booktitle = {Proceedings of the 29th ACM International Conference on Multimedia},
+  pages     = {--},
+  year      = {2021}
+}
+``` 
